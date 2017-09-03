@@ -1,0 +1,25 @@
+Q:What happens when you initialize a repository? Why do you need to do it?
+
+A: A hidden .git folder is created. It serves as a repository for all the files in the folder that it's in. But, there is no initial commit, so no files have been commited yet.
+You need to do it so you can track files and make commits and for git itself to work.
+
+Q: How can you use the staging area to make sure you have one commit per logical change?
+
+A: By only adding the file or files that make a logical change together. And then commitng the changes before doing smt else.
+
+Q: What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+A: At testing new experimental changes, allowing me to still have a working branch/code, but also to try new stuff. Also unfinished features, or features that take a long time to implement, and you want or need to have working code while you're doing that.
+
+Q: How do the diagrams help you visualize the branch structure?
+
+A: By using arrows to make it clear that a commit points to the previous commit on the same branch/master, so it's easy to see the different branches, also their labels, and non-labeled, unreachable(unless we know their SHA-1 code) commits, that AREN'T branches.
+
+Q: What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+A: The result is the code that was removed in one of the branches compared to the base branch(the one commit where they started to differ, ie where a branch was created) will not exist in the merged branch, the code that was added to one or the other branch compared to the base will be in the merged branch, and the code that is in both will also remain. Any conflicts must be resolved for the merge to be successfull. 
+Because the merged branch will have two parent commits, ie the last commits of the merged branches.
+
+Q: What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+A: You would have to change or delete or add all the code manualy which would be idiotic. Git automerges all the code it knows is not in conflict, and asks you to resolve only any potencial conflicts.
